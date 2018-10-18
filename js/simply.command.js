@@ -23,7 +23,9 @@ this.simply = (function(simply, global) {
             get: function(el) {
                 var data = {};
                 [].forEach.call(el.elements, function(el) {
-                    data[el.name] = el.value;
+                    if (el.name) {
+                        data[el.name] = el.value;
+                    }
                 });
                 return data;//new FormData(el);
             },
