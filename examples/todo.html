@@ -1,5 +1,5 @@
 <h1>Examples</h1>
-<h2>Counter</h2>
+<h2>TODO</h2>
 <link rel="stylesheet" href="examples.css">
 
 <div id="todoApp">
@@ -10,17 +10,15 @@
 		<template>
 			<li>
 				<label data-simply-field="item">Item</label>
+				<input type="checkbox" data-simply-field="completed" value=1>
 			</li>
 		</template>
 	</ul>
 </div>
-<script src="//cdn.simplyedit.io/1/simply-edit.js"></script>
+<script src="https://cdn.simplyedit.io/1/simply-edit.js" data-simply-storage="none"></script>
 <script src="../dist/simply.everything.js"></script>
 <script>
 	var todoApp = simply.app({
-		bind: {
-			twoway: false
-		},
 		container: document.getElementById('todoApp'),
 		commands: {
 			addEntry: function(form, values) {
@@ -43,7 +41,8 @@
 					item: 'iets'
 				},
 				{
-					item: 'iets anders'
+					item: 'iets anders',
+					completed: 1
 				}
 			]
 		}

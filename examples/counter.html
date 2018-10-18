@@ -2,34 +2,35 @@
 <h2>Counter</h2>
 <link rel="stylesheet" href="examples.css">
 
-<div id="counterApp">
+<div id="counterApp" data-simply-path="/1/">
 	<input type="text" data-simply-field="counter">
 	<button data-simply-command="add1">+</button>
 	<button data-simply-command="sub1">-</button>
 	<div>Counter is now: <span data-simply-field="counter"></span></div>
 </div>
 
-<div id="counterApp2">
+<div id="counterApp2" data-simply-path="/2/">
 	<input type="text" data-simply-field="counter">
 	<button data-simply-command="add1">+</button>
 	<button data-simply-command="sub1">-</button>
 	<div>Counter is now: <span data-simply-field="counter"></span></div>
 </div>
 
+<script src="https://cdn.simplyedit.io/1/simply-edit.js" data-simply-storage="none"></script>
 <script src="../dist/simply.everything.js"></script>
 <script>
 	var counterApp = simply.app({
 		container: document.getElementById('counterApp'),
 		commands: {
 			add1: function() {
-				counterApp.view.counter++;
+				editor.pageData.counter1++;
 			},
 			sub1: function() {
-				counterApp.view.counter--;
+				editor.pageData.counter1--;
 			}
 		},
-		view: {
-			counter: 1
+		view : {
+			counter : 2
 		}
 	});
 
@@ -43,8 +44,8 @@
 				counterApp2.view.counter--;
 			}
 		},
-		view: {
-			counter: 2
+		view : {
+			counter : 4
 		}
 	});
 
